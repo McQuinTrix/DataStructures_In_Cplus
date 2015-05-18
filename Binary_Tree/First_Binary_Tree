@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+struct BinaryTree{
+    int data;
+    struct BinaryTree * left;
+    struct BinaryTree * right;
+};
+
+int main(){
+    struct BinaryTree *root = (struct BinaryTree *)malloc(sizeof(struct BinaryTree));
+    struct BinaryTree *left = (struct BinaryTree *)malloc(sizeof(struct BinaryTree));
+    struct BinaryTree *right = (struct BinaryTree *)malloc(sizeof(struct BinaryTree));
+    root->data = 1;
+    left->data = 10;
+    right->data = 20;
+    root->left = left;
+    root->right = right;
+    std::cout << root->left->data;
+}
